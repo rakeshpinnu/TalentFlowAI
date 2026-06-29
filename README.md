@@ -121,16 +121,7 @@ Feedback Collection
 
 ---
 
-# Repository Structure
 
-```
-docs/
-maestro/
-agents/
-workflows/
-integrations/
-assets/
-```
 
 ---
 
