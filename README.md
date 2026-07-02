@@ -141,6 +141,9 @@ TalentFlowAI
 │   ├── TalentFlowAI.uis
 │   ├── Sync_Job_Vectors_Robot.uis
 │
+├── Presentation
+│   ├── TalentFlowAI_Deck.pptx
+│
 └── README.md
 ```
 ---
@@ -191,7 +194,27 @@ This video explains:
 - Why TalentFlowAI was created
 - How it transforms enterprise recruitment
 
-📁 `Demo/01_Why_TalentFlowAI.mp4`
+**[View TalentFlowAI Presentation Deck](Presentation/TalentFlowAI_Deck.pptx)**
+
+---
+
+# Presentation
+
+The complete **TalentFlowAI** presentation deck is available in the **Presentation** folder.
+
+It includes:
+
+- Business Problem
+- Solution Overview
+- Architecture
+- AI Agent Design
+- Maestro Workflow
+- Technical Implementation
+- Key Features
+- Business Benefits
+- End-to-End Demonstration
+
+📂 **Location:** `Presentation/TalentFlowAI_Deck.pptx`
 
 ---
 
