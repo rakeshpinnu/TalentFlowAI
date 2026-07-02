@@ -76,7 +76,7 @@ TalentFlowAI addresses these challenges through intelligent AI-powered orchestra
 | Large Language Models | Resume Analysis & AI Decision Making |
 
 ---
-
+```text
 # 🔄 High-Level Workflow
 
 
@@ -117,9 +117,9 @@ Interview Feedback Collection
           │
           ▼
 Document Collection
-
+```
 ---
-
+```text
 # 📂 Repository Structure
 
 TalentFlowAI
@@ -143,7 +143,7 @@ TalentFlowAI
 │   ├── Sync_Job_Vectors_Robot.uis
 │
 └── README.md
-
+```
 ---
 
 # 📦 Repository Contents
