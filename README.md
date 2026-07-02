@@ -1,4 +1,5 @@
 # TalentFlowAI
+![UiPath](https://img.shields.io/badge/UiPath-Maestro-orange)
 
 ## 🚀 Because Great Talent Should Never Be Lost.
 
@@ -134,13 +135,13 @@ TalentFlowAI
 │   ├── 02_TalentFlowAI_Solution_Walkthrough.mp4
 │
 ├── Presentation
-│   ├── TalentFlowAI_Deck.pptx
+│   └── TalentFlowAI_Deck.pptx
 │
 ├── Setup
 │   ├── SetupInstructions.md
 │   └── Images
 │
-├── Solutions
+├── Solution
 │   ├── TalentFlowAI.uis
 │   ├── Sync_Job_Vectors_Robot.uis
 │
@@ -153,7 +154,7 @@ TalentFlowAI
 This repository includes everything required to deploy and run TalentFlowAI.
 
 - ✅ TalentFlowAI Solution
-- ✅ TalentFlowAI-Indexer Solution
+- ✅ Sync_Job_Vectors_Robot Solution
 - ✅ Complete Setup Guide
 - ✅ Data Service Schema
 - ✅ Maestro Process Flow
@@ -180,7 +181,7 @@ The guide walks you through:
 - Running TalentFlowAI-Indexer
 - Running TalentFlowAI
 
-📖 **Setup Guide:** `Setup/README.md`
+📖 **[View Setup Guide](Setup/README.md)**
 
 ---
 
@@ -194,7 +195,7 @@ This video explains:
 - Why TalentFlowAI was created
 - How it transforms enterprise recruitment
 
-📁 `Demo/01_Why_TalentFlowAI.mp4`
+📹 **[Business Demonstration](Demo/01_Why_TalentFlowAI.mp4)**
 
 ---
 
@@ -210,7 +211,7 @@ This video demonstrates:
 - Human-in-the-Loop
 - End-to-End Execution
 
-📁 `Demo/02_TalentFlowAI_Solution_Walkthrough.mp4`
+📹 **[Technical Walkthrough](Demo/02_TalentFlowAI_Solution_Walkthrough.mp4)**
 
 ---
 
@@ -232,7 +233,7 @@ It includes:
 
 # 🤖 AI Vector Index
 
-TalentFlowAI uses **semantic search** to identify the most relevant job opportunities for every candidate.
+This enables AI Agents to retrieve the most contextually relevant job postings instead of relying on keyword-based matching. Identify the most relevant job opportunities for every candidate.
 
 The **Sync_Job_Vectors_Robot** solution is responsible for keeping the AI Vector Index synchronized with the latest job postings.
 
@@ -326,8 +327,10 @@ During the development of **TalentFlowAI**, **Gemini CLI** was used as a Coding 
 
 TalentFlowAI was built as part of the **UiPath AgentHack**, demonstrating how AI Agents, semantic search, intelligent orchestration, and human collaboration can transform enterprise recruitment into a faster, smarter, and more candidate-centric experience.
 
+## ⭐ TalentFlowAI
+
+**AI-Powered Recruitment Orchestration using UiPath Maestro**
+
+*Because Great Talent Should Never Be Lost.*
+
 ---
-
-# TalentFlowAI
-
-## **Because Great Talent Should Never Be Lost.**
