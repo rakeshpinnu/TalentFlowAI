@@ -1,251 +1,317 @@
 # TalentFlowAI
-## Because Great Talent Should Never Be Lost.
-TalentFlowAI | AI-powered recruitment orchestration using UiPath Maestro to intelligently match candidates, automate hiring workflows, reduce recruiter effort, and ensure great talent never misses the right opportunity.
+
+## 🚀 Because Great Talent Should Never Be Lost.
+
+TalentFlowAI is an AI-powered Recruitment Orchestration Platform built using **UiPath Maestro** that intelligently matches candidates to the most suitable job opportunities, automates recruitment workflows, and enables recruiters to hire the right talent faster.
 
 ---
 
-# Overview
+# 📐 Solution Architecture
 
-TalentFlowAI is an AI-powered Recruitment Orchestration platform built using **UiPath Maestro** that transforms traditional recruitment into an intelligent, end-to-end hiring experience.
+The complete end-to-end UiPath Maestro orchestration flow can be found here:
 
-Instead of manually reviewing thousands of recruitment emails and resumes, TalentFlowAI automatically understands candidate information, evaluates business priorities, intelligently routes candidates to the most suitable opportunity, automates interview scheduling.
-
-The solution combines AI reasoning, automation, enterprise data, and human collaboration to help hiring teams hire the right candidate at the right time while ensuring deserving candidates never miss the right opportunity.
+📄 **[View Maestro Process Flow](Architecture/Maestro_Process_Flow.pdf)**
 
 ---
 
-# Problem Statement
+# 🌟 Overview
 
-Enterprise recruitment teams face several operational challenges:
+Traditional recruitment is often focused on filling a single job opening. As a result, highly qualified candidates are frequently rejected simply because they are not the perfect fit for one position.
 
-- Thousands of recruitment emails received every day.
-- Unstructured resumes and incomplete candidate information.
-- Manual ATS evaluation.
-- Manual cooling period verification.
-- Duplicate candidate applications.
-- Manual recruiter follow-ups.
-- Interview scheduling complexity.
-- Hiring deadline pressure.
-- Losing highly qualified candidates due to manual decision making.
+TalentFlowAI changes this approach by evaluating every candidate against **multiple job opportunities** across the organization. Instead of rejecting great talent, the platform intelligently identifies the best available role using AI-powered reasoning, semantic job matching, and enterprise recruitment data.
 
-TalentFlowAI solves these challenges through intelligent orchestration.
+Built on **UiPath Maestro**, TalentFlowAI combines AI Agents, Human-in-the-Loop approvals, Data Service, Integration Service, and event-driven workflows to orchestrate the complete recruitment lifecycle—from receiving a candidate application to interview scheduling and HR verification.
 
 ---
 
-# Key Features
+# 🎯 Problem Statement
 
-- AI-powered Resume Understanding
-- Duplicate Candidate Detection
-- Multi-Job ATS Evaluation
-- Intelligent Candidate Routing
-- Missing Information Collection with Candidate rather than Manual FollowUps
-- Cooling Period Validation
-- AI-powered Workforce Decision Making
-- Human-in-the-loop Approvals
-- Dynamic Interview Scheduling
-- Event-driven Long Running Workflows
-- Document Collection
+Recruitment teams face numerous operational challenges:
+
+- Thousands of recruitment emails every day
+- Manual resume screening
+- Duplicate candidate applications
+- Manual ATS evaluation
+- Cooling period verification
+- Missing candidate information
+- Recruiter follow-ups
+- Interview scheduling complexity
+- Hiring deadline pressure
+- Losing highly qualified candidates due to manual decision making
+
+TalentFlowAI addresses these challenges through intelligent AI-powered orchestration.
 
 ---
 
-# UiPath Components Used
+# ✨ Key Features
 
-The solution has been built using the following UiPath platform components:
+- 🤖 AI-powered Resume Understanding
+- 🎯 Semantic Multi-Job Matching
+- 📊 Multi-Job ATS Scoring
+- 👤 Duplicate Candidate Detection
+- 📄 Automated Candidate Information Collection
+- 🔄 Cooling Period Validation
+- 🧠 AI-powered Recruitment Decision Support
+- 👥 Human-in-the-Loop Approvals
+- 📅 Automated Interview Scheduling with Calendly
+- ⚡ Event-driven Long Running Workflows
+- 🔍 AI Vector Search using UiPath GenAI Activities
+- 📂 Document Collection
+
+---
+
+# 🏗 Technology Stack
 
 | Component | Purpose |
 |------------|---------|
 | UiPath Maestro | End-to-End Process Orchestration |
 | UiPath Agent Builder | AI Agents |
-| UiPath Apps | Candidate Task Forms |
-| UiPath Data Service | Candidate & Job Data Storage |
-| UiPath Integration Service | External Integrations like GMail, Calendy (For Scheduling) |
-| UiPath Action Center | Human Approvals |
-| UiPath Orchestrator | Process Management |
-| UiPath Studio | Automation Workflows |
-| AI Center / LLM | Resume Understanding & AI Reasoning |
+| UiPath Studio | Workflow Development |
+| UiPath Data Service | Candidate & Recruitment Data |
+| UiPath Apps | Candidate Forms |
+| UiPath Integration Service | Gmail, Calendly & Webhooks |
+| UiPath Action Center | Human-in-the-Loop Decisions |
+| UiPath Orchestrator | Process Execution |
+| UiPath GenAI Activities | Semantic Job Search |
+| Large Language Models | Resume Analysis & AI Decision Making |
 
 ---
 
+# 🔄 High-Level Workflow
 
-
-# High-Level Workflow
-
-```
-Recruitment Email
-
-↓
-
+```text
+Candidate Application Email
+          │
+          ▼
 Resume Understanding
-
-↓
-
-Candidate Profile
-
-↓
-
-Duplicate Check
-
-↓
-
-Relevant Job Discovery
-
-↓
-
-ATS Evaluation
-
-↓
-
-Collect Missing Information
-
-↓
-
+          │
+          ▼
+Candidate Creation
+          │
+          ▼
+Duplicate Candidate Check
+          │
+          ▼
+Semantic Job Discovery
+          │
+          ▼
+Multi-Job ATS Evaluation
+          │
+          ▼
+Candidate Information Collection
+          │
+          ▼
 Business Context Evaluation
-
-↓
-
-AI Reasoning
-
-↓
-
+          │
+          ▼
+AI Decision Making
+          │
+          ▼
+Human Approval (When Required)
+          │
+          ▼
 Interview Scheduling
+          │
+          ▼
+Interview Feedback Collection
+          │
+          ▼
+Document Collection
 
-↓
+---
 
-Human Approval
+# 📂 Repository Structure
 
-↓
-
-Feedback Collection
-
+```text
+TalentFlowAI
+│
+├── Architecture
+│   ├── Maestro_Process_Flow.pdf
+│   └── README.md
+│
+├── DataService
+│   ├── Schema.json
+│   └── README.md
+│
+├── Demo
+│   ├── 01_Why_TalentFlowAI.mp4
+│   ├── 02_TalentFlowAI_Solution_Walkthrough.mp4
+│   └── README.md
+│
+├── Setup
+│   ├── README.md
+│   └── Images
+│
+├── Solutions
+│   ├── TalentFlowAI.uis
+│   ├── Sync_Job_Vectors_Robot.uis
+│   └── README.md
+│
+└── README.md
 ```
 
 ---
 
+# 📦 Repository Contents
 
+This repository includes everything required to deploy and run TalentFlowAI.
 
----
-
-# Setup Instructions
-
-## Prerequisites
-
-- UiPath Maestro
-- UiPath Studio
-- UiPath Orchestrator
-- UiPath Apps
-- UiPath Data Service
-- Agent Builder
-- Integration Service
-- Calendy
+- ✅ TalentFlowAI Solution
+- ✅ TalentFlowAI-Indexer Solution
+- ✅ Complete Setup Guide
+- ✅ Data Service Schema
+- ✅ Maestro Process Flow
+- ✅ Business Demonstration
+- ✅ Technical Walkthrough
 
 ---
 
-## Setup & Configuration Guide
+# 🚀 Getting Started
 
-TalentFlowAI is a cloud-native solution built on **UiPath Automation Cloud** using **UiPath Maestro**.
+Follow the complete installation guide available in the **Setup** folder.
 
-To configure and run the solution:
+The guide walks you through:
 
-### Step 1 – Configure Email Integration
+- Importing UiPath Solutions
+- Configuring Gmail Integration
+- Configuring UiPath Data Service
+- Configuring UiPath GenAI Activities
+- Configuring Calendly
+- Creating Calendly Webhook
+- Importing the Data Service Schema
+- Creating the Storage Bucket
+- Creating the AI Vector Index
+- Running TalentFlowAI-Indexer
+- Running TalentFlowAI
 
-- Create a Gmail Integration Service connection.
-- Connect it to any Gmail account that will act as the **Hiring Team Mailbox**.
-- Recruitment applications received in this mailbox will automatically trigger the Maestro workflow.
+📖 **Setup Guide:** `Setup/README.md`
 
-### Step 2 – Configure Calendar Integration
+---
 
-- Create a Calendly account.
-- Connect Calendly with the candidate scheduling portal.
-- Configure available interview slots and panel availability.
+# 🎥 Demo
 
-### Step 3 – Configure Webhook
+## Business Demonstration
 
-- Create a Calendly Webhook.
-- Configure the webhook URL in UiPath Integration Service.
-- The webhook automatically notifies Maestro whenever a candidate books an interview slot.
+This video explains:
 
-### Step 4 – Configure Data Service
+- The recruitment challenges
+- Why TalentFlowAI was created
+- How it transforms enterprise recruitment
 
-Create the required Data Service entities:
+📁 `Demo/01_Why_TalentFlowAI.mp4`
 
-- Candidate
-- Job
-- Job Application
-- Interview
-- Interview Feedback
+---
 
-### Step 5 – Configure AI Agents
+## Technical Walkthrough
 
-Deploy and configure the required AI Agents:
+This video demonstrates:
 
-- Guardrail Agent
-- Job Discovery Agent
-- Multi-Job ATS Scoring Agent
-- Workforce Capacity Agent
+- Complete UiPath Maestro Workflow
+- AI Agents
+- Integration Service Connections
+- Data Service
+- Long Running Workflows
+- Human-in-the-Loop
+- End-to-End Execution
 
-### Step 6 – Import UiPath Apps
+📁 `Demo/02_TalentFlowAI_Solution_Walkthrough.mp4`
 
-Import the UiPath Apps used for:
+---
 
-- Candidate Information Collection
+# 🤖 AI Vector Index
+
+TalentFlowAI uses **semantic search** to identify the most relevant job opportunities for every candidate.
+
+The **Sync_Job_Vectors_Robot** solution is responsible for keeping the AI Vector Index synchronized with the latest job postings.
+
+The workflow automatically:
+
+- Reads the latest Job Postings from UiPath Data Service.
+- Generates a CSV file containing all active job postings.
+- Uploads the CSV file to a Storage Bucket.
+- Updates the AI Vector Index with the latest data.
+
+To ensure the Vector Index always reflects the current job openings, an **event-driven automation** has been implemented. Whenever a **Job Posting** is created, updated, or deleted in the UiPath Data Service, a Data Service event automatically triggers the **Sync_Job_Vectors_Robot** workflow.
+
+This ensures that:
+
+- Newly created job postings are immediately available for AI-powered matching.
+- Updates to existing job postings are reflected in the Vector Index without manual intervention.
+- Removed or inactive job postings are no longer considered during candidate evaluation.
+- AI Agents always retrieve the most recent and accurate job data while performing semantic search and ATS evaluation.
+
+This automated synchronization eliminates the need for manual index maintenance and ensures TalentFlowAI always uses the latest recruitment data.
+
+---
+
+# 📦 Solutions
+
+## TalentFlowAI
+
+The primary recruitment orchestration workflow responsible for:
+
+- Resume Processing
+- Candidate Management
+- Job Matching
+- ATS Evaluation
+- AI Decision Making
+- Human Approvals
 - Interview Scheduling
-- Document Collection
-
-### Step 7 – Publish the Maestro Process
-
-- Publish the Maestro workflow to UiPath Automation Cloud.
-- Ensure all integrations, agents, and Data Service entities are correctly linked.
-
-### Step 8 – Run the Solution
-
-Once configured, the process runs automatically.
-
-1. A candidate sends a job application to the Hiring Team Gmail mailbox.
-2. UiPath Maestro automatically starts the workflow.
-3. AI processes the application, evaluates relevant job opportunities, collects missing information, and makes recruitment recommendations.
-4. If eligible, the candidate receives a scheduling link to book an interview.
-5. After the interview, feedback is collected, and the recruitment journey continues until onboarding.
+- HR Verification
 
 ---
 
-# Demo
+## Sync_Job_Vectors_Robot
 
-Business Demonstration
+Keeps the AI Vector Index synchronized with the latest Job Posting data.
 
-https://youtu.be/C_ETxqoZpEc
+Responsibilities include:
 
-Technical Walkthrough
-
-https://youtu.be/sWEW9BziTIA
+- Exporting Job Postings
+- Creating CSV Files
+- Uploading to Storage Bucket
+- Updating the AI Vector Index
 
 ---
 
-# Future Roadmap
+# 🎯 Future Enhancements
+
+Planned enhancements include:
 
 - LinkedIn Integration
 - Naukri Integration
-- Offer Letter Automation
+- AI Candidate Ranking Dashboard
+- AI Interview Analysis
+- Offer Letter Generation
 - Background Verification
-- Document Verification
 - Employee Onboarding
 - IT Asset Provisioning
 - Day-One Automation
 
 ---
 
-# Built With
+# 🛠 Built With
 
 - UiPath Maestro
 - UiPath Agent Builder
 - UiPath Studio
-- UiPath Apps
+- UiPath Actions
 - UiPath Data Service
 - UiPath Integration Service
-- AI
-- LLMs
+- UiPath Orchestrator
+- UiPath GenAI Activities
+- Gmail
+- Calendly
+- Large Language Models (LLMs)
 
 ---
 
-TalentFlowAI
+# 🙏 Acknowledgements
 
-Because Great Talent Should Never Be Lost.
+TalentFlowAI was built as part of the **UiPath AgentHack**, demonstrating how AI Agents, semantic search, intelligent orchestration, and human collaboration can transform enterprise recruitment into a faster, smarter, and more candidate-centric experience.
+
+---
+
+# ❤️ TalentFlowAI
+
+## **Because Great Talent Should Never Be Lost.**
