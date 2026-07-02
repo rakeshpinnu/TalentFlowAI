@@ -321,7 +321,7 @@ Planned enhancements include:
 
 During the development of **TalentFlowAI**, **Gemini CLI** was used as a Coding Agent in creating UiPath Maestro workflows helping generate the workflow and automation logic used in the project.
 
-# 🙏 Acknowledgements
+# Acknowledgements
 
 TalentFlowAI was built as part of the **UiPath AgentHack**, demonstrating how AI Agents, semantic search, intelligent orchestration, and human collaboration can transform enterprise recruitment into a faster, smarter, and more candidate-centric experience.
 
