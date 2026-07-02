@@ -133,6 +133,9 @@ TalentFlowAI
 │   ├── 01_Why_TalentFlowAI.mp4
 │   ├── 02_TalentFlowAI_Solution_Walkthrough.mp4
 │
+├── Presentation
+│   ├── TalentFlowAI_Deck.pptx
+│
 ├── Setup
 │   ├── SetupInstructions.md
 │   └── Images
@@ -140,9 +143,6 @@ TalentFlowAI
 ├── Solutions
 │   ├── TalentFlowAI.uis
 │   ├── Sync_Job_Vectors_Robot.uis
-│
-├── Presentation
-│   ├── TalentFlowAI_Deck.pptx
 │
 └── README.md
 ```
@@ -194,7 +194,7 @@ This video explains:
 - Why TalentFlowAI was created
 - How it transforms enterprise recruitment
 
-**[View TalentFlowAI Presentation Deck](Presentation/TalentFlowAI_Deck.pptx)**
+**[View TalentFlowAI Presentation Deck](Presentation/TalentFlowAI_deck.pptx)**
 
 ---
 
