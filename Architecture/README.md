@@ -4,7 +4,7 @@ This folder contains the process architecture for TalentFlowAI.
 
 ## Maestro Process Flow
 
-**File:** `Maestro_Process_Flow.png`
+**File:** `uipath-diagram.pdf`
 
 This diagram represents the complete end-to-end orchestration implemented in UiPath Maestro. It illustrates how AI agents, automation tasks, human-in-the-loop decisions, and external integrations collaborate throughout the recruitment lifecycle.
 
