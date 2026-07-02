@@ -362,7 +362,7 @@ This Vector Index is used by the ATS Scoring Agent to perform semantic job match
 
 # Step 7 - Run TalentFlowAI-Indexer
 
-The **Sync_Job_Vectors_Robot** solution is available in the **[Solutions](../Solutions)** folder of this GitHub repository.
+The **Sync_Job_Vectors_Robot** solution is available in the **[Solution](../Solution)** folder of this GitHub repository.
 
 Execute the following solution:
 
