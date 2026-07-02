@@ -24,7 +24,7 @@ Navigate to:
 
 **Automation Cloud → UiPath Studio → Import**
 
-The required solution files are available in the **[Solutions](../Solutions)** folder of this GitHub repository.
+The required solution files are available in the **[Solution](../Solution)** folder of this GitHub repository.
 
 Import the following solutions:
 
@@ -38,7 +38,7 @@ This solution synchronizes the latest Job Postings data with the AI Vector Index
 
 > **Note:** Ensure both solutions are imported successfully before proceeding to the next steps.
 
-![Import Solution](Images/Import Solution Window.png)
+![Import Solution](Images/ImportSolutionWindow.png)
 
 ---
 
