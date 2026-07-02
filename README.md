@@ -10,7 +10,7 @@ TalentFlowAI is an AI-powered Recruitment Orchestration Platform built using **U
 
 The complete end-to-end UiPath Maestro orchestration flow can be found here:
 
-📄 **[View Maestro Process Flow](Architecture/Maestro_Process_Flow.pdf)**
+📄 **[View Maestro Process Flow](Architecture/uipath-diagram.pdf)**
 
 ---
 
