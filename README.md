@@ -305,6 +305,6 @@ TalentFlowAI was built as part of the **UiPath AgentHack**, demonstrating how AI
 
 ---
 
-# ❤️ TalentFlowAI
+# TalentFlowAI
 
 ## **Because Great Talent Should Never Be Lost.**
