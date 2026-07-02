@@ -1,7 +1,8 @@
 # TalentFlowAI
+### 🚀 Because Great Talent Should Never Be Lost.
+
 ![UiPath](https://img.shields.io/badge/UiPath-Maestro-orange)
 
-## 🚀 Because Great Talent Should Never Be Lost.
 
 TalentFlowAI is an AI-powered Recruitment Orchestration Platform built using **UiPath Maestro** that intelligently matches candidates to the most suitable job opportunities, automates recruitment workflows, and enables recruiters to hire the right talent faster.
 
