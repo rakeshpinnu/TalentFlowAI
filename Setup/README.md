@@ -10,11 +10,9 @@ This guide explains how to deploy and configure **TalentFlowAI** in UiPath Autom
 Before starting the installation, ensure the following services are available in your UiPath Automation Cloud tenant.
 
 - UiPath Maestro
-- UiPath Data Service
+- UiPath Data Fabric
 - UiPath Integration Service
-- UiPath GenAI Activities
-- Gmail Account
-- Calendly Account
+- UiPath Actions
 
 ![Import Solution](Images/Prerequisites.png)
 
@@ -24,7 +22,7 @@ Before starting the installation, ensure the following services are available in
 
 Navigate to:
 
-Automation Cloud → Solutions → Import Solution
+Automation Cloud → Uipath Studio → Import
 
 Import the following solutions in the given order.
 
