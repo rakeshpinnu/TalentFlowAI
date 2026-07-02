@@ -1,11 +1,6 @@
 # TalentFlowAI
 #### 🚀 Because Great Talent Should Never Be Lost.
 
-![UiPath](https://img.shields.io/badge/UiPath-Maestro-orange)
-![AgentHack](https://img.shields.io/badge/UiPath-AgentHack-blue)
-![AI](https://img.shields.io/badge/AI-Powered-success)
-
-
 TalentFlowAI is an AI-powered Recruitment Orchestration Platform built using **UiPath Maestro** that intelligently matches candidates to the most suitable job opportunities, automates recruitment workflows, and enables recruiters to hire the right talent faster.
 
 ---
