@@ -76,10 +76,9 @@ TalentFlowAI addresses these challenges through intelligent AI-powered orchestra
 | Large Language Models | Resume Analysis & AI Decision Making |
 
 ---
-```text
+
 # 🔄 High-Level Workflow
-
-
+```text
 Candidate Application Email
           │
           ▼
@@ -119,9 +118,9 @@ Interview Feedback Collection
 Document Collection
 ```
 ---
-```text
-# 📂 Repository Structure
 
+# 📂 Repository Structure
+```text
 TalentFlowAI
 │
 ├── Architecture
