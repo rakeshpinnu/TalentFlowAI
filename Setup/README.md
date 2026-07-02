@@ -16,7 +16,7 @@ Before starting the installation, ensure the following services are available in
 - Gmail Account
 - Calendly Account
 
-📷 **Screenshot Placeholder:** UiPath Automation Cloud Services
+![Import Solution](Images/Prerequisites.png)
 
 ---
 
