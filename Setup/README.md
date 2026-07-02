@@ -219,6 +219,8 @@ This event-driven approach eliminates the need for polling and allows the recrui
 
 After generating the **Webhook URL** from the TalentFlowAI solution, configure Calendly to notify this endpoint whenever a candidate books an interview.
 
+![Import Solution](Images/WebhookURL.png)
+
 ##### 2.5.1 Generate a Personal Access Token
 
 1. Log in to your Calendly account.
@@ -362,7 +364,7 @@ This Vector Index is used by the ATS Scoring Agent to perform semantic job match
 
 # Step 7 - Run TalentFlowAI-Indexer
 
-The **Sync_Job_Vectors_Robot** solution is available in the **[Solution](../Solution)** folder of this GitHub repository.
+The **Sync_Job_Vectors_Robot** solution is available in the **[Solutions](../Solutions)** folder of this GitHub repository.
 
 Execute the following solution:
 
@@ -370,7 +372,7 @@ Execute the following solution:
 
 This solution synchronizes the latest Job Posting data with the AI Vector Index and should be executed:
 
-- After the initial installation.
+- After the initial installation to create the first AI Vector Index.
 - Whenever new job postings are added.
 - Whenever existing job postings are modified.
 - Whenever job postings are removed.
@@ -392,6 +394,20 @@ Update AI Vector Index
 After successful execution, the latest job postings become available for semantic search and AI-powered job matching.
 
 ---
+
+## Configure Event Trigger
+
+To keep the AI Vector Index synchronized automatically, create an **Event Trigger** for the **Job Postings** Data Service entity.
+
+Configure the Event Trigger to execute the **Sync_Job_Vectors_Robot** process whenever a Job Posting record is:
+
+- Created
+- Updated
+
+This ensures that every change made to the Job Postings table automatically triggers the synchronization workflow, keeping the AI Vector Index up to date without requiring manual execution.
+
+![Import Solution](Images/EventTriggersForSync_Vector_Robot.png)
+
 
 # Step 8 - Run TalentFlowAI
 
