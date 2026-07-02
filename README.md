@@ -79,7 +79,7 @@ TalentFlowAI addresses these challenges through intelligent AI-powered orchestra
 
 # 🔄 High-Level Workflow
 
-```text
+
 Candidate Application Email
           │
           ▼
@@ -122,33 +122,27 @@ Document Collection
 
 # 📂 Repository Structure
 
-```text
 TalentFlowAI
 │
 ├── Architecture
 │   ├── Maestro_Process_Flow.pdf
-│   └── README.md
 │
 ├── DataService
 │   ├── Schema.json
-│   └── README.md
 │
 ├── Demo
 │   ├── 01_Why_TalentFlowAI.mp4
 │   ├── 02_TalentFlowAI_Solution_Walkthrough.mp4
-│   └── README.md
 │
 ├── Setup
-│   ├── README.md
+│   ├── SetupInstructions.md
 │   └── Images
 │
 ├── Solutions
 │   ├── TalentFlowAI.uis
 │   ├── Sync_Job_Vectors_Robot.uis
-│   └── README.md
 │
 └── README.md
-```
 
 ---
 
