@@ -22,19 +22,23 @@ Before starting the installation, ensure the following services are available in
 
 Navigate to:
 
-Automation Cloud → Uipath Studio → Import
+**Automation Cloud → UiPath Studio → Import**
 
-Import the following solutions in the given order.
+The required solution files are available in the **[Solutions](../Solutions)** folder of this GitHub repository.
+
+Import the following solutions:
 
 ### 1. TalentFlowAI.uis
 
-This is the main recruitment orchestration solution.
+This is the primary recruitment orchestration solution responsible for the end-to-end recruitment workflow.
 
-### 2. TalentFlowAI-Indexer.uis
+### 2. Sync_Job_Vectors_Robot.uis
 
-This solution updates the AI Vector Index whenever the Job Posting data changes.
+This solution synchronizes the latest Job Postings data with the AI Vector Index, enabling semantic job matching.
 
-📷 **Screenshot Placeholder:** Import Solution Window
+> **Note:** Ensure both solutions are imported successfully before proceeding to the next steps.
+
+![Import Solution](Images/Import Solution Window.png)
 
 ---
 
@@ -46,184 +50,279 @@ Navigate to the **Connections** section.
 
 Configure all required connections.
 
-📷 **Screenshot Placeholder:** Connections Page
+![Import Solution](Images/Connections.png)
+
 
 ---
 
 ## 2.1 Gmail Connection
 
-Used for:
+The Gmail connection acts as the **central recruitment mailbox** for TalentFlowAI.
 
-- Sending interview invitations
-- Sending rejection emails
-- HR communication
+### Purpose
 
-Steps
+This mailbox is used to:
 
-1. Click **Add Connection**
-2. Select **Gmail**
-3. Authenticate your Gmail account
-4. Save
+- Receive new candidate applications.
+- Trigger the TalentFlowAI Maestro process whenever a new application email is received.
+- Send interview invitations to shortlisted candidates.
+- Send rejection emails to non-selected candidates.
+- Send follow-up communications throughout the recruitment process.
 
-📷 **Screenshot Placeholder:** Gmail Connection
+> **Important:** This mailbox serves as the primary communication channel for the solution. The TalentFlowAI Maestro workflow is triggered automatically whenever a new email is received in this mailbox. All outgoing candidate communications are also sent using the same Gmail account.
+
+### Configuration Steps
+
+1. Open the **Connections** tab in the imported TalentFlowAI solution.
+2. Select **Gmail**.
+3. Click **Add Connection**.
+4. Authenticate using the Gmail account that will be used as the recruitment mailbox.
+5. Save the connection.
 
 ---
 
 ## 2.2 Data Service Connection
 
-Used for accessing
+The UiPath Data Service acts as the **centralized database** for TalentFlowAI, storing and managing all recruitment-related information throughout the candidate lifecycle.
 
-- Candidates
-- Job Postings
-- Interview Details
-- HR Verification Data
+### Purpose
 
-Steps
+The Data Service is used to:
 
-1. Click **Add Connection**
-2. Select **Data Service**
-3. Select your tenant
-4. Save
+- Store candidate profiles and other information.
+- Maintain all candidate applications.
+- Store job postings available for recruitment.
+- Track the current stage of every candidate application.
+- Store interview details and scheduling information.
 
-📷 **Screenshot Placeholder:** Data Service Connection
+### How TalentFlowAI Uses Data Service
+
+Whenever a new application email is received:
+
+1. The Maestro workflow checks whether the candidate already exists in the Data Service.
+2. If the candidate does not exist, a new candidate record is created.
+3. A new application record is created for the candidate.
+4. If the candidate already has an active application, the workflow processes it according to the configured business rules.
+5. Throughout the recruitment process, the application status is continuously updated in the Data Service, allowing recruiters to easily track the candidate's current stage.
+
+The Data Service serves as the **single source of truth** for candidate and recruitment information, ensuring all AI agents, workflows, and HR users operate on the latest data.
+
+### Configuration Steps
+
+1. Open the **Connections** tab in the imported TalentFlowAI solution.
+2. Select **UiPath Data Service**
+3. Click **Add Connection**.
+4. Select your Automation Cloud tenant.
+5. Save the connection.
 
 ---
 
 ## 2.3 GenAI Activities Connection
 
-Used for
+The **UiPath GenAI Activities** connection enables TalentFlowAI to perform AI-powered job matching by querying the Vector Index built from the organization's job postings.
 
-- Resume Analysis
-- ATS Score Calculation
-- Job Matching
-- AI Decision Making
+### Purpose
 
-Steps
+The GenAI Activities are used to:
 
-1. Click **Add Connection**
-2. Select **GenAI Activities**
-3. Authenticate
-4. Save
+- Retrieve the most relevant job postings for a candidate using semantic search.
+- Compare candidate resumes against available job openings.
+- Provide contextual information to AI agents for accurate evaluation.
+- Support AI-driven ATS scoring and candidate assessment.
 
-📷 **Screenshot Placeholder:** GenAI Connection
+### How TalentFlowAI Uses GenAI Activities
+
+TalentFlowAI maintains an up-to-date **Vector Index** containing all active job postings. This index is automatically updated by the **Sync_Job_Vectors_Robot** solution whenever job posting data changes.
+
+When a new candidate application is received:
+
+1. The candidate's resume is analyzed.
+2. The GenAI Activities query the Vector Index to retrieve the most relevant job postings based on the candidate's skills and experience.
+3. The retrieved job postings are provided as context to the AI agents.
+4. The AI agents calculate ATS scores, evaluate the candidate against multiple job openings, and recommend the best matching positions.
+
+
+### Configuration Steps
+
+1. Open the **Connections** tab in the imported TalentFlowAI solution.
+2. Select **UiPath GenAI Activities**.
+3. Click **Add Connection**.
+4. Authenticate using your Automation Cloud account.
+5. Save the connection.
 
 ---
+
+## 2.4 Calendly Connection
+
+The Calendly connection enables TalentFlowAI to automatically schedule interviews by integrating with the organization's Calendly account.
+
+### Purpose
+
+The Calendly connection is used to:
+
+- Generate interview scheduling links.
+- Allow candidates to book interview slots based on real-time interviewer availability.
+- Eliminate manual interview scheduling.
+- Provide a seamless self-service scheduling experience for candidates.
+
+### How TalentFlowAI Uses Calendly
+
+After a candidate successfully clears the AI evaluation stage, TalentFlowAI automatically generates a Calendly scheduling link and sends it to the candidate via Gmail.
+
+The candidate can then:
+
+1. Open the scheduling link.
+2. View the interviewer's real-time availability.
+3. Select a convenient interview slot.
+4. Confirm the booking.
+
+This removes the need for HR to manually coordinate interview timings and significantly reduces scheduling effort.
+
+### Configuration Steps
+
+1. Open the **Connections** tab in the imported TalentFlowAI solution.
+2. Select **Calendly**.
+3. Click **Add Connection**.
+4. Authenticate using your Calendly account.
+5. Save the connection.
+
+---
+
+## 2.5 Calendly Webhook Connection
+
+The Calendly Webhook enables TalentFlowAI to automatically resume the recruitment workflow whenever a candidate books an interview slot.
+
+### Purpose
+
+The Calendly Webhook is used to:
+
+- Detect when a candidate successfully books an interview.
+- Automatically resume the UiPath Maestro workflow.
+- Update interview details in the Data Service.
+- Continue the recruitment process without manual intervention.
+
+### How TalentFlowAI Uses the Calendly Webhook
+
+After the interview scheduling email is sent, the TalentFlowAI workflow waits for the candidate to book an interview slot.
+
+When the candidate confirms a booking in Calendly:
+
+1. Calendly sends the booking event to the Webhook URL generated by the TalentFlowAI solution.
+2. The webhook notifies UiPath Maestro that the interview has been scheduled.
+3. The Maestro workflow resumes automatically.
+4. Interview details are updated in the Data Service.
+5. The workflow continues with the remaining recruitment stages, such as HR document collection and verification.
+
+This event-driven approach eliminates the need for polling and allows the recruitment workflow to continue automatically.
+
+### Configuration Steps
+
+After generating the **Webhook URL** from the TalentFlowAI solution, configure Calendly to notify this endpoint whenever a candidate books an interview.
+
+##### 2.5.1 Generate a Personal Access Token
+
+1. Log in to your Calendly account.
+2. Navigate to:
+
+   **Settings**
+   ↓
+   **Integrations & Apps**
+   ↓
+   **API and Webhooks**
+   ↓
+   **Create Personal Access Token**
+
+3. Enter a token name (e.g., **TalentFlowAI**).
+4. Select the required **Webhook** scope.
+5. Verify your email address (if prompted).
+6. Copy the generated **Personal Access Token**.
+
+---
+
+##### 2.5.2 Retrieve the Current User URI
+
+The Current User URI is required when creating the webhook subscription.
+
+1. Open the following API documentation:
+
+   https://developer.calendly.com/api-docs/005832c83aeae-get-current-user
+
+2. Execute the API using the following header:
+
+```
+Authorization: Bearer <Personal Access Token>
+```
+
+3. Locate the **resource.uri** field in the response.
+
+Example:
+
+```
+https://api.calendly.com/users/XXXXXXXXXXXX
+```
+
+4. Copy this value for the next step.
+
+---
+
+##### 2.5.3 Create the Webhook Subscription
+
+1. Open the following API documentation:
+
+   https://developer.calendly.com/api-docs/c1ddc06ce1f1b-create-webhook-subscription
+
+2. Configure the request using the following values:
+
+| Field | Value |
+|--------|-------|
+| Authorization | Bearer `<Personal Access Token>` |
+| Callback URL | TalentFlowAI Webhook URL |
+| User | Current User URI |
+| Events | `invitee.created` |
+
+3. Execute the request.
+4. Verify that the webhook subscription is created successfully.
+
+---
+
+##### 2.5.4 Validate the Webhook
+
+1. Use the interview scheduling link generated by TalentFlowAI.
+2. Book a test interview slot.
+3. Verify that Calendly triggers the webhook.
+4. Confirm that the UiPath Maestro workflow resumes automatically.
+
+
+> **Important:** The Webhook URL generated by TalentFlowAI must be configured in Calendly. Once the webhook subscription is active, every interview booking automatically triggers the UiPath Maestro workflow, allowing the recruitment process to continue without manual intervention.
+
 
 # Step 3 - Import the Data Service Schema
 
-Navigate to
+Navigate to:
 
-Automation Cloud
+**Automation Cloud**  
+↓  
+**Data Fabric**  
+↓  
+**Import Schema**
 
-↓
+The required Data Service schema is available in the **[DataService](../DataService)** folder of this GitHub repository.
 
-Data Service
+Import the following file:
 
-↓
+**Schema.json**
 
-Import Schema
+After the import is completed, verify that:
 
-Import
+- All **Entities (Data Tables)** are created successfully.
+- All **Choice Sets** are imported successfully.
+- The entity relationships and field definitions are created correctly.
 
-TalentFlowAI_DataService_Schema.json
-
-After importing, verify that
-
-- All Entities are created
-- Choice Sets are imported successfully
-
-📷 **Screenshot Placeholder:** Import Schema Screen
-
----
-
-# Step 4 - Configure Calendly
-
-TalentFlowAI uses Calendly for interview scheduling.
+> **Note:** This schema contains all the Data Service components required by both **TalentFlowAI** and **TalentFlowAI-Indexer**. Importing this schema automatically creates all entities and choice sets used throughout the solution.
 
 ---
 
-## 4.1 Create a Calendly Account
-
-Create a Calendly account if you do not already have one.
-
-https://calendly.com
-
-📷 **Screenshot Placeholder:** Calendly Dashboard
-
----
-
-## 4.2 Generate a Personal Access Token
-
-Navigate to
-
-Settings
-
-↓
-
-Integrations & Apps
-
-↓
-
-API and Webhooks
-
-↓
-
-Create Personal Access Token
-
-Provide
-
-- Token Name
-- Webhook Scope
-
-Verify your email.
-
-Copy the generated Personal Access Token.
-
-📷 **Screenshot Placeholder:** Personal Access Token
-
----
-
-## 4.3 Retrieve Current User URI
-
-Open the following API.
-
-https://developer.calendly.com/api-docs/005832c83aeae-get-current-user
-
-Call the API using
-
-Authorization
-
-Bearer <Personal Access Token>
-
-Copy the returned **Current User URI**.
-
-📷 **Screenshot Placeholder:** Current User API Response
-
----
-
-## 4.4 Create Webhook Subscription
-
-Open the following API.
-
-https://developer.calendly.com/api-docs/c1ddc06ce1f1b-create-webhook-subscription
-
-Provide
-
-- Personal Access Token
-- Current User URI
-- TalentFlowAI Webhook URL
-
-Subscribe to the event
-
-Invitee Created
-
-Once completed, every time a candidate books an interview, Calendly automatically triggers the TalentFlowAI workflow.
-
-📷 **Screenshot Placeholder:** Webhook Creation
-
----
-
-# Step 5 - Create the Storage Bucket
+# Step 4 - Create the Storage Bucket
 
 Navigate to
 
@@ -238,8 +337,6 @@ Storage Buckets
 Create Storage Bucket
 
 Create a Storage Bucket that will store the Job Posting CSV generated by the Indexer solution.
-
-📷 **Screenshot Placeholder:** Storage Bucket Creation
 
 ---
 
@@ -261,40 +358,38 @@ Configure the index using the Storage Bucket created in the previous step.
 
 This Vector Index is used by the ATS Scoring Agent to perform semantic job matching.
 
-📷 **Screenshot Placeholder:** Vector Index Creation
-
 ---
 
 # Step 7 - Run TalentFlowAI-Indexer
 
-Execute the **TalentFlowAI-Indexer** solution.
+The **Sync_Job_Vectors_Robot** solution is available in the **[Solutions](../Solutions)** folder of this GitHub repository.
 
-This workflow performs the following operations.
+Execute the following solution:
 
+**Sync_Job_Vectors_Robot.uis**
+
+This solution synchronizes the latest Job Posting data with the AI Vector Index and should be executed:
+
+- After the initial installation.
+- Whenever new job postings are added.
+- Whenever existing job postings are modified.
+- Whenever job postings are removed.
+
+The workflow performs the following operations:
+
+```text
 Job Postings (Data Service)
-
-↓
-
-Download Records
-
-↓
-
-Generate CSV
-
-↓
-
+        ↓
+Download Job Posting Records
+        ↓
+Generate CSV File
+        ↓
 Upload CSV to Storage Bucket
+        ↓
+Update AI Vector Index
+```
 
-↓
-
-Update Vector Index
-
-Run this workflow
-
-- After the initial installation
-- Whenever Job Posting data changes
-
-📷 **Screenshot Placeholder:** Successful Index Update
+After successful execution, the latest job postings become available for semantic search and AI-powered job matching.
 
 ---
 
@@ -346,15 +441,7 @@ Webhook Trigger
 
 HR Document Collection
 
-↓
 
-HR Verification
-
-↓
-
-Candidate Onboarding
-
-📷 **Screenshot Placeholder:** Running TalentFlowAI
 
 ---
 
