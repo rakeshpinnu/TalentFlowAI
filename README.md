@@ -194,27 +194,7 @@ This video explains:
 - Why TalentFlowAI was created
 - How it transforms enterprise recruitment
 
-**[View TalentFlowAI Presentation Deck](Presentation/TalentFlowAI_deck.pptx)**
-
----
-
-# Presentation
-
-The complete **TalentFlowAI** presentation deck is available in the **Presentation** folder.
-
-It includes:
-
-- Business Problem
-- Solution Overview
-- Architecture
-- AI Agent Design
-- Maestro Workflow
-- Technical Implementation
-- Key Features
-- Business Benefits
-- End-to-End Demonstration
-
-📂 **Location:** `Presentation/TalentFlowAI_Deck.pptx`
+📁 `Demo/01_Why_TalentFlowAI.mp4`
 
 ---
 
@@ -231,6 +211,22 @@ This video demonstrates:
 - End-to-End Execution
 
 📁 `Demo/02_TalentFlowAI_Solution_Walkthrough.mp4`
+
+---
+
+# Presentation
+
+The complete **TalentFlowAI** presentation deck is available in the **Presentation** folder.
+
+It includes:
+
+- Business Problem
+- Solution Overview
+- Key Features
+- Business Benefits
+
+**[View TalentFlowAI Presentation Deck](Presentation/TalentFlowAI_deck.pptx)**
+
 
 ---
 
