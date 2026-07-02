@@ -301,7 +301,7 @@ Planned enhancements include:
 
 # AI-Assisted Development
 
-During the development of **TalentFlowAI**, **Gemini CLI** was used as a Coding Agent in creating UiPath Maestro workflows helping generate the workflow structure and automation logic used in the project.
+During the development of **TalentFlowAI**, **Gemini CLI** was used as a Coding Agent in creating UiPath Maestro workflows helping generate the workflow and automation logic used in the project.
 
 # 🙏 Acknowledgements
 
